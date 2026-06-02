@@ -123,7 +123,7 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
 </div>
 
 <header class="hero-banner">
-  <h1 class="page-title" id="pageTitle">Stage Productions</h1>
+  <h1 class="page-title" id="pageTitle">Stage Productions: Mandaara Creations</h1>
   <span class="page-subtitle" id="pageSubtitle">Stage Productions & Theater Design</span>
   
   <div class="intro-textbox" id="introContent"></div>
@@ -201,7 +201,7 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
 <script>
 const STR = {
   en: {
-    title: "Stage Productions",
+    title: "Stage Productions: Mandaara Creations",
     subtitle: "Stage Productions & Theater Design",
     backText: "← Back to Curated Space",
     introText: "Welcome to the digital archive of theatrical works & recordings of live cultural performances staged by us under the Mandaara Creations banner. These include musicals based on classical Kannada poetry and modern suspense thrillers staged here in Bay Area, California.",
@@ -217,7 +217,7 @@ const STR = {
     footer: "Hosted on GitHub Pages"
   },
   kn: {
-    title: "ರಂಗಪ್ರಯೋಗಗಳು",
+    title: "ರಂಗಪ್ರಯೋಗಗಳು: ಮಂದಾರ ಕ್ರಿಯೇಷನ್ಸ್",
     subtitle: "Stage Productions & Theater Design",
     backText: "← ಪ್ರಧಾನ ಪುಟಕ್ಕೆ ಹಿಂತಿರುಗಿ",
     introText: "ನಮ್ಮ ಮಂದಾರ ಕ್ರಿಯೇಷನ್ಸ್ ನ ರಂಗ ಚಟುವಟಿಕೆಗಳ ಡಿಜಿಟಲ್ ಸಂಗ್ರಹವಿದು. ಕನ್ನಡ ಕಾವ್ಯಗಳನ್ನು ಆಧರಿಸಿದ ರೂಪಕಗಳಿಂದ ಹಿಡಿದು ಕ್ಯಾಲಿಫೋರ್ನಿಯಾದ ಬೇ ಏರಿಯಾದಲ್ಲಿ ಪ್ರದರ್ಶಿಸಲಾದ ಸಮಕಾಲೀನ ರೋಚಕ ನಾಟಕಗಳೂ ಇದರಲ್ಲಿ ಸೇರಿವೆ.",
@@ -237,28 +237,22 @@ const STR = {
 function applyLocalization(l) {
   const s = STR[l];
   
-  // Save preference globally across portfolio navigation scope
   localStorage.setItem('hamsanandi_lang', l);
   
-  // Header Elements Mapping
   document.getElementById('pageTitle').textContent = s.title;
   document.getElementById('pageTitle').className = 'page-title' + (l === 'kn' ? ' kn' : '');
   document.getElementById('pageSubtitle').textContent = s.subtitle;
   
-  // Textbox InnerHTML Assignment
   document.getElementById('introContent').innerHTML = s.introText;
   document.getElementById('introContent').className = 'intro-textbox' + (l === 'kn' ? ' kn' : '');
 
-  // Upper Navigation Links Mapping
   document.getElementById('navBack').querySelector('a').textContent = s.backText;
   document.getElementById('navBack').querySelector('a').href = "../index.html?lang=" + l;
   document.getElementById('navBack').className = 'nav-back' + (l === 'kn' ? ' kn' : '');
   
-  // Section Separation Divider Text Mapping
   document.getElementById('mediaHeading').textContent = s.heading;
   document.getElementById('mediaHeading').className = 'section-heading' + (l === 'kn' ? ' kn' : '');
   
-  // Toggle switcher layout styling
   if (l === 'kn') {
     document.getElementById('langKn').className = 'active';
     document.getElementById('langEn').className = '';
@@ -267,7 +261,6 @@ function applyLocalization(l) {
     document.getElementById('langEn').className = 'active';
   }
 
-  // Categories Labeling
   const labelsKavya = [1, 5, 6];
   const labelsThriller = [2, 3, 4];
   
@@ -286,7 +279,6 @@ function applyLocalization(l) {
     }
   });
 
-  // Video titles mapping loop
   for (let i = 1; i <= 6; i++) {
     const titleEl = document.getElementById('t' + i);
     if (titleEl) {
@@ -298,11 +290,9 @@ function applyLocalization(l) {
   document.getElementById('footerEl').textContent = s.footer;
 }
 
-// ── Smart State Initialization ──
 const urlParams = new URLSearchParams(window.location.search);
 let langChoice = urlParams.get('lang');
 
-// If URL has no parameter, query shared localStorage or document.referrer context fallback
 if (!langChoice) {
   langChoice = localStorage.getItem('hamsanandi_lang');
   
@@ -315,7 +305,6 @@ if (!langChoice) {
   }
 }
 
-// Run routing configuration directly
 if (langChoice === 'en') {
   applyLocalization('en');
 } else {
