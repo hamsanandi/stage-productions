@@ -105,7 +105,7 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
 </div>
 
 <header class="hero-banner">
-  <h1 class="page-title" id="pageTitle">ರಂಗ ಪ್ರಸ್ತುತಿಗಳು</h1>
+  <h1 class="page-title" id="pageTitle">ರಂಗಪ್ರಯೋಗಗಳು</h1>
   <span class="page-subtitle" id="pageSubtitle">Stage Productions & Theater Design</span>
   
   <div class="intro-textbox" id="introContent"></div>
@@ -171,7 +171,7 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
     </div>
     <div class="media-info">
       <span class="media-label" id="lblMedia6">Kavya Natya</span>
-      <div class="media-title" id="t6">KarnaRasayana — Based on Kumaravyasa Bharata </div>
+      <div class="media-title" id="t6">KarnaRasayana — Introductory Context & Dramatization</div>
     </div>
   </div>
 
@@ -186,7 +186,7 @@ const STR = {
     title: "Stage Productions",
     subtitle: "Stage Productions & Theater Design",
     backText: "← Back to Curated Space",
-    introText: "Welcome to the digital archive of theatrical works & recordings of live cultural performances staged by us under the Mandaara Creations banner. These include musical based on classicla Kannada poetry and modern suspense thrillers staged here in Bay Area, California.",
+    introText: "Welcome to the digital archive of theatrical works & recordings of live cultural performances staged by us under the Mandaara Creations banner. These include musicals based on classical Kannada poetry and modern suspense thrillers staged here in Bay Area, California.",
     heading: "Recorded Performances",
     lblKavya: "Kavya Natya",
     lblThriller: "Suspense Thriller",
@@ -202,66 +202,4 @@ const STR = {
     title: "ರಂಗಪ್ರಯೋಗಗಳು",
     subtitle: "Stage Productions & Theater Design",
     backText: "← ಪ್ರಧಾನ ಪುಟಕ್ಕೆ ಹಿಂತಿರುಗಿ",
-    introText: " ನಮ್ಮ ಮಂದಾರ ಕ್ರಿಯೇಷನ್ಸ್ ನ ರಂಗ ಚಟುವಟಿಕೆಗಳ ಡಿಜಿಟಲ್ ಸಂಗ್ರಹವಿದು. ಕನ್ನಡ ಕಾವ್ಯಗಳನ್ನು ಆಧರಿಸಿದ ರೂಪಕಗಳಿಂದ ಹಿಡಿದು ಸಮಕಾಲೀನ ರೋಚಕ ನಾಟಕಗಳೂ ಇದರಲ್ಲಿ ಸೇರಿವೆ.",
-    heading: "ರಂಗ ಪ್ರದರ್ಶನಗಳು ಮತ್ತು ದೃಶ್ಯಾವಳಿಗಳು",
-    lblKavya: "ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸ್ತುತಿ",
-    lblThriller: "ಸಸ್ಪೆನ್ಸ್ ಥ್ರಿಲ್ಲರ್ ನಾಟಕ",
-    t1: "ಕಾವ್ಯ ನಾಟ್ಯ: ಕೀಚಕ ವಧೆ — ರಂಗ ಪ್ರಸ್ತುತಿ ಪ್ರಸಂಗ",
-    t2: "ನಂ ೩, ಪಂಚವಟಿ — ಕನ್ನಡ ರಹಸ್ಯ ಪತ್ತೇದಾರಿ ಥ್ರಿಲ್ಲರ್ ನಾಟಕ",
-    t3: "ಗಾಜಿನ ಮನೆ — ಕನ್ನಡ ಸಸ್ಪೆನ್ಸ್ ಕ್ರೈಮ್ ಥ್ರಿಲ್ಲರ್ ರಂಗ ಪ್ರಯೋಗ",
-    t4: "ಪುಟ್ಟಮಲ್ಲಿಗೆ ಎಸ್ಟೇಟ್ — ಕುತೂಹಲಕಾರಿ ರಂಗ ಪ್ರದರ್ಶನ",
-    t5: "ಸುಭದ್ರಾ ಕಲ್ಯಾಣ — ಸಾಂಪ್ರದಾಯಿಕ ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸಂಗ",
-    t6: "ಕರ್ಣರಸಾಯನ — ನಾಟ್ಯಶಾಸ್ತ್ರ ಹಿನ್ನೆಲೆ ಹಾಗೂ ಕಾವ್ಯರೂಪಕ ಪ್ರಸ್ತುತಿ",
-    footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ"
-  }
-};
-
-function applyLocalization(l) {
-  const s = STR[l];
-  
-  // Header text mapping safely to the single text box container
-  document.getElementById('pageTitle').textContent = s.title;
-  document.getElementById('pageTitle').className = 'page-title' + (l === 'kn' ? ' kn' : '');
-  document.getElementById('pageSubtitle').textContent = s.subtitle;
-  
-  // This line accurately dynamically sets either English or Kannada description text
-  document.getElementById('introContent').textContent = s.introText;
-  document.getElementById('introContent').className = 'intro-textbox' + (l === 'kn' ? ' kn' : '');
-
-  // Back navigation link mapping
-  document.getElementById('navBack').querySelector('a').textContent = s.backText;
-  document.getElementById('navBack').className = 'nav-back' + (l === 'kn' ? ' kn' : '');
-  
-  // Section layout titles mapping
-  document.getElementById('mediaHeading').textContent = s.heading;
-  document.getElementById('mediaHeading').className = 'section-heading' + (l === 'kn' ? ' kn' : '');
-  
-  // Localized grid component strings mapping
-  const labelsKavya = [1, 5, 6];
-  const labelsThriller = [2, 3, 4];
-  
-  labelsKavya.forEach(i => {
-    document.getElementById('lblMedia' + i).textContent = s.lblKavya;
-    document.getElementById('lblMedia' + i).className = 'media-label' + (l === 'kn' ? ' kn' : '');
-  });
-  labelsThriller.forEach(i => {
-    document.getElementById('lblMedia' + i).textContent = s.lblThriller;
-    document.getElementById('lblMedia' + i).className = 'media-label' + (l === 'kn' ? ' kn' : '');
-  });
-
-  // Inject beautiful regular prose titles safely
-  for (let i = 1; i <= 6; i++) {
-    document.getElementById('t' + i).textContent = s['t' + i];
-    document.getElementById('t' + i).className = 'media-title' + (l === 'kn' ? ' kn' : '');
-  }
-  
-  document.getElementById('footerEl').textContent = s.footer;
-}
-
-// Bootstrap Initialization
-const urlParams = new URLSearchParams(window.location.search);
-const langParam = urlParams.get('lang');
-applyLocalization(langParam === 'kn' ? 'kn' : 'en');
-</script>
-</body>
-</html>
+    intro
