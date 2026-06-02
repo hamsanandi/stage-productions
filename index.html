@@ -81,32 +81,50 @@ body {
 }
 .section-heading.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.92rem; letter-spacing: 0.05em; text-transform: none; }
 
-/* ── Media Grid Layout ── */
+/* ── Refactored Aesthetic Media Grid Layout ── */
 .media-grid { 
   display: grid; 
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 24px; 
+  grid-template-columns: repeat(3, 1fr); /* Switched smoothly from 2 to 3 columns */
+  gap: 20px; /* Symmetrical spacing buffer adjustment */
   padding: 0 20px; 
 }
 .media-card {
   background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
   overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
 }
 .video-container { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-.media-info { padding: 14px; }
-.media-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-dim); font-family: 'Cinzel', serif; margin-bottom: 4px; display: block; }
-.media-label.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.72rem; text-transform: none; letter-spacing: 0; }
-.media-title { font-family: 'Noto Serif Kannada', serif; font-size: 0.98rem; font-weight: 600; color: var(--text); min-height: 44px; line-height: 1.4; }
+
+.media-info { 
+  padding: 12px; 
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.media-label { font-size: 0.68em; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-dim); font-family: 'Cinzel', serif; margin-bottom: 6px; display: block; }
+.media-label.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.7rem; text-transform: none; letter-spacing: 0; }
+
+.media-title { 
+  font-family: 'Noto Serif Kannada', serif; 
+  font-size: 0.92rem; /* Slit down slightly for elegant tight 3-row fit */
+  font-weight: 600; 
+  color: var(--text); 
+  line-height: 1.4;
+}
 
 /* ── Footer ── */
 .section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 48px 20px 0; }
 footer { text-align: center; color: var(--meta); margin-top: 24px; font-size: 0.82em; }
 footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
 
-/* ── Responsive Adjustment ── */
-@media (max-width: 640px) {
-  .media-grid { grid-template-columns: 1fr; gap: 20px; }
+/* ── Responsive Viewport Breakpoints ── */
+@media (max-width: 768px) {
+  .media-grid { grid-template-columns: repeat(2, 1fr); } /* Crisp balance layout shift for tablets */
+}
+@media (max-width: 520px) {
+  .media-grid { grid-template-columns: 1fr; gap: 16px; } /* Stack safely line-by-line on phones */
 }
 </style>
 </head>
