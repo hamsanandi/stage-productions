@@ -105,13 +105,13 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
 </div>
 
 <header class="hero-banner">
-  <h1 class="page-title" id="pageTitle">ರಂಗಪ್ರಯೋಗಗಳು</h1>
+  <h1 class="page-title" id="pageTitle">Stage Productions</h1>
   <span class="page-subtitle" id="pageSubtitle">Stage Productions & Theater Design</span>
   
   <div class="intro-textbox" id="introContent"></div>
 </header>
 
-<div class="section-heading" id="mediaHeading">Recorded Performances — ದೃಶ್ಯಾವಳಿಗಳು</div>
+<div class="section-heading" id="mediaHeading">Recorded Performances</div>
 
 <div class="media-grid">
 
@@ -210,7 +210,7 @@ const STR = {
     t2: "ನಂ ೩, ಪಂಚವಟಿ — ಕನ್ನಡ ರಹಸ್ಯ ಪತ್ತೇದಾರಿ ಥ್ರಿಲ್ಲರ್ ನಾಟಕ",
     t3: "ಗಾಜಿನ ಮನೆ — ಕನ್ನಡ ಸಸ್ಪೆನ್ಸ್ ಕ್ರೈಮ್ ಥ್ರಿಲ್ಲರ್ ರಂಗ ಪ್ರಯೋಗ",
     t4: "ಪುಟ್ಟಮಲ್ಲಿಗೆ ಎಸ್ಟೇಟ್ — ಕುತೂಹಲಕಾರಿ ರಂಗ ಪ್ರದರ್ಶನ",
-    t5: "ಸುಭದ್ರಾ کಲ್ಯಾಣ — ಸಾಂಪ್ರದಾಯಿಕ ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸಂಗ",
+    t5: "ಸುಭದ್ರಾ ಕಲ್ಯಾಣ — ಸಾಂಪ್ರದಾಯಿಕ ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸಂಗ",
     t6: "ಕರ್ಣರಸಾಯನ — ನಾಟ್ಯಶಾಸ್ತ್ರ ಹಿನ್ನೆಲೆ ಹಾಗೂ ಕಾವ್ಯರೂಪಕ ಪ್ರಸ್ತುತಿ",
     footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ"
   }
@@ -219,24 +219,24 @@ const STR = {
 function applyLocalization(l) {
   const s = STR[l];
   
-  // Header text mapping safely to single textbox
+  // Header Elements Mapping
   document.getElementById('pageTitle').textContent = s.title;
   document.getElementById('pageTitle').className = 'page-title' + (l === 'kn' ? ' kn' : '');
   document.getElementById('pageSubtitle').textContent = s.subtitle;
   
-  // Fixed: Swapped textContent to innerHTML to process strings safely
+  // Description Box Body Mapping
   document.getElementById('introContent').innerHTML = s.introText;
   document.getElementById('introContent').className = 'intro-textbox' + (l === 'kn' ? ' kn' : '');
 
-  // Back navigation mapping
+  // Back Navigation Mapping
   document.getElementById('navBack').querySelector('a').textContent = s.backText;
   document.getElementById('navBack').className = 'nav-back' + (l === 'kn' ? ' kn' : '');
   
-  // Section separator heading layout
+  // Media Grid Section Header Mapping
   document.getElementById('mediaHeading').textContent = s.heading;
   document.getElementById('mediaHeading').className = 'section-heading' + (l === 'kn' ? ' kn' : '');
   
-  // Fixed mapping lookup indices to use corresponding matching tag structures (lbl1 instead of lblMedia1)
+  // Media Category Labels Routing Loops
   const labelsKavya = [1, 5, 6];
   const labelsThriller = [2, 3, 4];
   
@@ -255,7 +255,7 @@ function applyLocalization(l) {
     }
   });
 
-  // Inject beautiful text casing values securely
+  // Media Asset Titles Routing Loop
   for (let i = 1; i <= 6; i++) {
     const titleEl = document.getElementById('t' + i);
     if (titleEl) {
@@ -267,7 +267,7 @@ function applyLocalization(l) {
   document.getElementById('footerEl').textContent = s.footer;
 }
 
-// ── Fixed Bootstrap Initialization ──
+// ── Corrected Bootstrap Initialization Routine ──
 const urlParams = new URLSearchParams(window.location.search);
 const langParam = urlParams.get('lang');
 
