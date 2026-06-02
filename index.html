@@ -237,24 +237,26 @@ const STR = {
 function applyLocalization(l) {
   const s = STR[l];
   
-  // Update header text contents
+  // Header text content mapping
   document.getElementById('pageTitle').textContent = s.title;
   document.getElementById('pageTitle').className = 'page-title' + (l === 'kn' ? ' kn' : '');
   document.getElementById('pageSubtitle').textContent = s.subtitle;
   
-  // Set the wide intro text content box cleanly
+  // Set wide text summary area content securely
   document.getElementById('introContent').innerHTML = s.introText;
   document.getElementById('introContent').className = 'intro-textbox' + (l === 'kn' ? ' kn' : '');
 
-  // Back Link Mapping
+  // Back Link Text Routing
   document.getElementById('navBack').querySelector('a').textContent = s.backText;
+  // Dynamic mapping back href destination parameters matching back route language state
+  document.getElementById('navBack').querySelector('a').href = "../index.html?lang=" + l;
   document.getElementById('navBack').className = 'nav-back' + (l === 'kn' ? ' kn' : '');
   
-  // Section layout title splitting
+  // Section separator layouts string injection
   document.getElementById('mediaHeading').textContent = s.heading;
   document.getElementById('mediaHeading').className = 'section-heading' + (l === 'kn' ? ' kn' : '');
   
-  // Setup toggle highlight classes natively
+  // Handle layout switcher visibility tags highlighting natively
   if (l === 'kn') {
     document.getElementById('langKn').className = 'active';
     document.getElementById('langEn').className = '';
@@ -263,7 +265,7 @@ function applyLocalization(l) {
     document.getElementById('langEn').className = 'active';
   }
 
-  // Label groups string injection
+  // Label content streams mapping loop
   const labelsKavya = [1, 5, 6];
   const labelsThriller = [2, 3, 4];
   
@@ -282,7 +284,7 @@ function applyLocalization(l) {
     }
   });
 
-  // Render prose video text maps cleanly
+  // Regular prose card descriptions injection routing loop
   for (let i = 1; i <= 6; i++) {
     const titleEl = document.getElementById('t' + i);
     if (titleEl) {
@@ -294,10 +296,24 @@ function applyLocalization(l) {
   document.getElementById('footerEl').textContent = s.footer;
 }
 
-// ── Routing Initialization Hook ──
+// ── Smart Multi-Option Routing Initialization ──
 const urlParams = new URLSearchParams(window.location.search);
-const langParam = urlParams.get('lang');
+let langParam = urlParams.get('lang');
 
+// If no explicit param exists in the URL bar, sniff out the parent page language state via document.referrer
+if (!langParam && document.referrer) {
+  try {
+    const referrerUrl = new URL(document.referrer);
+    const referrerParams = new URLSearchParams(referrerUrl.search);
+    if (referrerParams.get('lang') === 'en') {
+      langParam = 'en';
+    }
+  } catch (e) {
+    // Fail-silent catch for external cross-origin security anomalies
+  }
+}
+
+// Fall back smoothly to English only if active parameter state is explicitly recognized as 'en'
 if (langParam === 'en') {
   applyLocalization('en');
 } else {
