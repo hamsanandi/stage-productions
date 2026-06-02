@@ -219,24 +219,24 @@ const STR = {
 function applyLocalization(l) {
   const s = STR[l];
   
-  // Header Text Containers mapping
+  // Header Info Translation Block
   document.getElementById('pageTitle').textContent = s.title;
   document.getElementById('pageTitle').className = 'page-title' + (l === 'kn' ? ' kn' : '');
   document.getElementById('pageSubtitle').textContent = s.subtitle;
   
-  // Description Block Mapping
+  // Textbox InnerHTML Assignment Fix
   document.getElementById('introContent').innerHTML = s.introText;
   document.getElementById('introContent').className = 'intro-textbox' + (l === 'kn' ? ' kn' : '');
 
-  // Navigation Links Mapping
+  // Upper Navigation Links Mapping
   document.getElementById('navBack').querySelector('a').textContent = s.backText;
   document.getElementById('navBack').className = 'nav-back' + (l === 'kn' ? ' kn' : '');
   
-  // Section Headers Layout Mapping
+  // Section Separation Divider Text Mapping
   document.getElementById('mediaHeading').textContent = s.heading;
   document.getElementById('mediaHeading').className = 'section-heading' + (l === 'kn' ? ' kn' : '');
   
-  // Synchronized ID Mapping loops ('lbl' + i matching 'id="lbl1"')
+  // Fixed: ID queries rewritten defensively to target 'lbl' + i directly
   const labelsKavya = [1, 5, 6];
   const labelsThriller = [2, 3, 4];
   
@@ -255,7 +255,7 @@ function applyLocalization(l) {
     }
   });
 
-  // Media Grid Titles Array loop
+  // Dynamic Video Asset Title Mapping 
   for (let i = 1; i <= 6; i++) {
     const titleEl = document.getElementById('t' + i);
     if (titleEl) {
@@ -267,7 +267,7 @@ function applyLocalization(l) {
   document.getElementById('footerEl').textContent = s.footer;
 }
 
-// ── Initialization Hook ──
+// ── Routing Initialization Hook ──
 const urlParams = new URLSearchParams(window.location.search);
 const langParam = urlParams.get('lang');
 
