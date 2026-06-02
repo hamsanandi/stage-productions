@@ -186,7 +186,7 @@ const STR = {
     title: "Stage Productions",
     subtitle: "Stage Productions & Theater Design",
     backText: "← Back to Curated Space",
-    introText: "Welcome to the digital archive of theatrical works staged live by us under the Mandaara Creations banner. We have performed original works based on classical Kannada poetry as well as modern suspense thrillers, staged in Bay Area, California.",
+    introText: "Welcome to the digital archive of theatrical works, stage direction, and music scores designed for live cultural performances. This space brings together original screenplays, metric transformations, and modern suspense thrillers written and staged in Bay Area, California.",
     heading: "Recorded Performances",
     lblKavya: "Kavya Natya",
     lblThriller: "Suspense Thriller",
@@ -219,10 +219,12 @@ const STR = {
 function applyLocalization(l) {
   const s = STR[l];
   
-  // Header text mapping
+  // Header text mapping safely to the single text box container
   document.getElementById('pageTitle').textContent = s.title;
   document.getElementById('pageTitle').className = 'page-title' + (l === 'kn' ? ' kn' : '');
   document.getElementById('pageSubtitle').textContent = s.subtitle;
+  
+  // This line accurately dynamically sets either English or Kannada description text
   document.getElementById('introContent').textContent = s.introText;
   document.getElementById('introContent').className = 'intro-textbox' + (l === 'kn' ? ' kn' : '');
 
