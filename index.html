@@ -139,7 +139,7 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
     </div>
     <div class="media-info">
       <span class="media-label" id="lbl1">Kavya Natya</span>
-      <div class="media-title" id="t1">Kavya Natya Keechaka Vadhe — Prasanga Performance</div>
+      <div class="media-title" id="t1">Kavya Natya Keechaka Vadhe</div>
     </div>
   </div>
 
@@ -189,7 +189,7 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
     </div>
     <div class="media-info">
       <span class="media-label" id="lbl6">Kavya Natya</span>
-      <div class="media-title" id="t6">KarnaRasayana — Introductory Context & Dramatization</div>
+      <div class="media-title" id="t6">Karna Rasayana - Based on Kumaravyasa Bharata</div>
     </div>
   </div>
 
@@ -208,12 +208,12 @@ const STR = {
     heading: "Recorded Performances",
     lblKavya: "Kavya Natya",
     lblThriller: "Suspense Thriller",
-    t1: "Kavya Natya Keechaka Vadhe — Prasanga Performance",
+    t1: "Kavya Natya Keechaka Vadhe",
     t2: "No. 3, Panchavati — Kannada Mystery Thriller Stage Play",
     t3: "Gaajina Mane — Kannada Suspense Thriller Drama",
     t4: "Puttamallige Estate — Mystery Thriller Stage Production",
     t5: "Subhadra Kalyana — Classical Kavya Natya Prasanga",
-    t6: "KarnaRasayana — Introductory Context & Dramatization",
+    t6: "Karna Rasayana - Based on Kumaravyasa Bharata",
     footer: "Hosted on GitHub Pages"
   },
   kn: {
@@ -245,7 +245,7 @@ function applyLocalization(l) {
   document.getElementById('pageTitle').className = 'page-title' + (l === 'kn' ? ' kn' : '');
   document.getElementById('pageSubtitle').textContent = s.subtitle;
   
-  // Textbox InnerHTML Assignment Fix
+  // Textbox InnerHTML Assignment
   document.getElementById('introContent').innerHTML = s.introText;
   document.getElementById('introContent').className = 'intro-textbox' + (l === 'kn' ? ' kn' : '');
 
