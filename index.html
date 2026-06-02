@@ -13,7 +13,7 @@
   --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
   --border: #d4c5a9; --border-light: #c0aa88;
   --text: #1a1208; --meta: #8a7055;
-  --c2-base: #4a1525; /* Distinct dark maroon tone aligned with Stage section theme */
+  --c2-base: #4a1525;
 }
 
 body {
@@ -61,9 +61,6 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 }
-.intro-textbox p { margin-bottom: 12px; }
-.intro-textbox p:last-child { margin-bottom: 0; }
-.intro-textbox.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.88rem; display: none; }
 
 /* ── Section Headings ── */
 .section-heading {
@@ -111,12 +108,7 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
   <h1 class="page-title" id="pageTitle">ರಂಗ ಪ್ರಸ್ತುತಿಗಳು</h1>
   <span class="page-subtitle" id="pageSubtitle">Stage Productions & Theater Design</span>
   
-  <div class="intro-textbox" id="textEn">
-    <p>Welcome to the digital archive of theatrical works, stage direction, and music scores designed for live cultural performances. This space brings together original screenplays, metric transformations, and modern suspense thrillers written and staged across worldwide Kannada cultural circuits.</p>
-  </div>
-  <div class="intro-textbox kn" id="textKn">
-    <p>ಕನ್ನಡ ರಂಗಭೂಮಿ, ನಾಟಕ ನಿರ್ದೇಶನ, ಚಿತ್ರಕಥೆ ಹಾಗೂ ಸಾಂಸ್ಕೃತಿಕ ನಾಟಕಗಳಿಗೆ ಸಂಯೋಜಿಸಿದ ಸಂಗೀತ ವಿನ್ಯಾಸಗಳ ಡಿಜಿಟಲ್ ಸಂಗ್ರಹವಿದು. ಮಹಾಕಾವ್ಯಗಳ ಕಾವ್ಯರೂಪಕಗಳಿಂದ ಹಿಡಿದು ಸಮಕಾಲೀನ ಸಸ್ಪೆನ್ಸ್ ಕ್ರೈಮ್ ಥ್ರಿಲ್ಲರ್ ನಾಟಕಗಳವರೆಗಿನ ವೈವಿಧ್ಯಮಯ ಪ್ರದರ್ಶನಗಳ ದೃಶ್ಯಾವಳಿಗಳನ್ನು ಇಲ್ಲಿ ಕಾಣಬಹುದು.</p>
-  </div>
+  <div class="intro-textbox" id="introContent"></div>
 </header>
 
 <div class="section-heading" id="mediaHeading">Recorded Performances — ದೃಶ್ಯಾವಳಿಗಳು</div>
@@ -128,8 +120,8 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
       <iframe src="https://www.youtube.com/embed/CE3SfsaVMhw?start=229" allowfullscreen></iframe>
     </div>
     <div class="media-info">
-      <span class="media-label" id="lbl1">Kavya Natya</span>
-      <div class="media-title" id="t1">KAVYA NATYA KEECHAKA VADHE — PRASANGA PERFORMANCE</div>
+      <span class="media-label" id="lblMedia1">Kavya Natya</span>
+      <div class="media-title" id="t1">Kavya Natya Keechaka Vadhe — Prasanga Performance</div>
     </div>
   </div>
 
@@ -138,8 +130,8 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
       <iframe src="https://www.youtube.com/embed/p7OeL6WwfeM?start=765" allowfullscreen></iframe>
     </div>
     <div class="media-info">
-      <span class="media-label" id="lbl2">Suspense Thriller</span>
-      <div class="media-title" id="t2">NO. 3, PANCHAVATI — KANNADA MYSTERY THRILLER STAGE PLAY</div>
+      <span class="media-label" id="lblMedia2">Suspense Thriller</span>
+      <div class="media-title" id="t2">No. 3, Panchavati — Kannada Mystery Thriller Stage Play</div>
     </div>
   </div>
 
@@ -148,8 +140,8 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
       <iframe src="https://www.youtube.com/embed/9mqZD8ljZm8?start=5" allowfullscreen></iframe>
     </div>
     <div class="media-info">
-      <span class="media-label" id="lbl3">Suspense Thriller</span>
-      <div class="media-title" id="t3">GAAJINA MANE — KANNADA SUSPENSE THRILLER DRAMA</div>
+      <span class="media-label" id="lblMedia3">Suspense Thriller</span>
+      <div class="media-title" id="t3">Gaajina Mane — Kannada Suspense Thriller Drama</div>
     </div>
   </div>
 
@@ -158,8 +150,8 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
       <iframe src="https://www.youtube.com/embed/cRAmAtZi57o?start=1675" allowfullscreen></iframe>
     </div>
     <div class="media-info">
-      <span class="media-label" id="lbl4">Suspense Thriller</span>
-      <div class="media-title" id="t4">PUTTAMALLIGE ESTATE — MYSTERY THRILLER STAGE PRODUCTION</div>
+      <span class="media-label" id="lblMedia4">Suspense Thriller</span>
+      <div class="media-title" id="t4">Puttamallige Estate — Mystery Thriller Stage Production</div>
     </div>
   </div>
 
@@ -168,8 +160,8 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
       <iframe src="https://www.youtube.com/embed/Lax14uqTIz4" allowfullscreen></iframe>
     </div>
     <div class="media-info">
-      <span class="media-label" id="lbl5">Kavya Natya</span>
-      <div class="media-title" id="t5">SUBHADRA KALYANA — CLASSICAL KAVYA NATYA PRASANGA</div>
+      <span class="media-label" id="lblMedia5">Kavya Natya</span>
+      <div class="media-title" id="t5">Subhadra Kalyana — Classical Kavya Natya Prasanga</div>
     </div>
   </div>
 
@@ -178,8 +170,8 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
       <iframe src="https://www.youtube.com/embed/LP2VSUIv7AY?start=607" allowfullscreen></iframe>
     </div>
     <div class="media-info">
-      <span class="media-label" id="lbl6">Kavya Natya</span>
-      <div class="media-title" id="t6">KARNARASAYANA — INTRODUCTORY CONTEXT & DRAMATIZATION</div>
+      <span class="media-label" id="lblMedia6">Kavya Natya</span>
+      <div class="media-title" id="t6">KarnaRasayana — Introductory Context & Dramatization</div>
     </div>
   </div>
 
@@ -191,20 +183,26 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
 <script>
 const STR = {
   en: {
+    title: "Stage Productions",
+    subtitle: "Stage Productions & Theater Design",
     backText: "← Back to Curated Space",
+    introText: "Welcome to the digital archive of theatrical works, stage direction, and music scores designed for live cultural performances. This space brings together original screenplays, metric transformations, and modern suspense thrillers written and staged in Bay Area, California.",
     heading: "Recorded Performances",
     lblKavya: "Kavya Natya",
     lblThriller: "Suspense Thriller",
-    t1: "KAVYA NATYA KEECHAKA VADHE — PRASANGA PERFORMANCE",
-    t2: "NO. 3, PANCHAVATI — KANNADA MYSTERY THRILLER STAGE PLAY",
-    t3: "GAAJINA MANE — KANNADA SUSPENSE THRILLER DRAMA",
-    t4: "PUTTAMALLIGE ESTATE — MYSTERY THRILLER STAGE PRODUCTION",
-    t5: "SUBHADRA KALYANA — CLASSICAL KAVYA NATYA PRASANGA",
-    t6: "KARNARASAYANA — INTRODUCTORY CONTEXT & DRAMATIZATION",
+    t1: "Kavya Natya Keechaka Vadhe — Prasanga Performance",
+    t2: "No. 3, Panchavati — Kannada Mystery Thriller Stage Play",
+    t3: "Gaajina Mane — Kannada Suspense Thriller Drama",
+    t4: "Puttamallige Estate — Mystery Thriller Stage Production",
+    t5: "Subhadra Kalyana — Classical Kavya Natya Prasanga",
+    t6: "KarnaRasayana — Introductory Context & Dramatization",
     footer: "Hosted on GitHub Pages"
   },
   kn: {
+    title: "ರಂಗಪ್ರಯೋಗಗಳು",
+    subtitle: "Stage Productions & Theater Design",
     backText: "← ಪ್ರಧಾನ ಪುಟಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+    introText: "ಕನ್ನಡ ರಂಗಭೂಮಿ, ನಾಟಕ ನಿರ್ದೇಶನ, ಚಿತ್ರಕಥೆ ಹಾಗೂ ಸಾಂಸ್ಕೃತಿಕ ನಾಟಕಗಳಿಗೆ ಸಂಯೋಜಿಸಿದ ಸಂಗೀತ ವಿನ್ಯಾಸಗಳ ಡಿಜಿಟಲ್ ಸಂಗ್ರಹವಿದು. ಮಹಾಕಾವ್ಯಗಳ ಕಾವ್ಯರೂಪಕಗಳಿಂದ ಹಿಡಿದು ಕ್ಯಾಲಿಫೋರ್ನಿಯಾದ ಬೇ ಏರಿಯಾದಲ್ಲಿ ಪ್ರದರ್ಶಿಸಲಾದ ಸಮಕಾಲೀನ ಸಸ್ಪೆನ್ಸ್ ಕ್ರೈಮ್ ಥ್ರಿಲ್ಲರ್ ನಾಟಕಗಳ ವೈವಿಧ್ಯಮಯ ದೃಶ್ಯಾವಳಿಗಳನ್ನು ಇಲ್ಲಿ ಕಾಣಬಹುದು.",
     heading: "ರಂಗ ಪ್ರದರ್ಶನಗಳು ಮತ್ತು ದೃಶ್ಯಾವಳಿಗಳು",
     lblKavya: "ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸ್ತುತಿ",
     lblThriller: "ಸಸ್ಪೆನ್ಸ್ ಥ್ರಿಲ್ಲರ್ ನಾಟಕ",
@@ -221,24 +219,22 @@ const STR = {
 function applyLocalization(l) {
   const s = STR[l];
   
+  // Header text mapping
+  document.getElementById('pageTitle').textContent = s.title;
+  document.getElementById('pageTitle').className = 'page-title' + (l === 'kn' ? ' kn' : '');
+  document.getElementById('pageSubtitle').textContent = s.subtitle;
+  document.getElementById('introContent').textContent = s.introText;
+  document.getElementById('introContent').className = 'intro-textbox' + (l === 'kn' ? ' kn' : '');
+
   // Back navigation link mapping
   document.getElementById('navBack').querySelector('a').textContent = s.backText;
   document.getElementById('navBack').className = 'nav-back' + (l === 'kn' ? ' kn' : '');
-  
-  // Top wide description text box visibility shift
-  if (l === 'kn') {
-    document.getElementById('textEn').style.display = 'none';
-    document.getElementById('textKn').style.display = 'block';
-  } else {
-    document.getElementById('textEn').style.display = 'block';
-    document.getElementById('textKn').style.display = 'none';
-  }
   
   // Section layout titles mapping
   document.getElementById('mediaHeading').textContent = s.heading;
   document.getElementById('mediaHeading').className = 'section-heading' + (l === 'kn' ? ' kn' : '');
   
-  // Dynamically map labels and metadata text cleanly
+  // Localized grid component strings mapping
   const labelsKavya = [1, 5, 6];
   const labelsThriller = [2, 3, 4];
   
@@ -251,15 +247,16 @@ function applyLocalization(l) {
     document.getElementById('lblMedia' + i).className = 'media-label' + (l === 'kn' ? ' kn' : '');
   });
 
-  // Inject content localized titles safely
+  // Inject beautiful regular prose titles safely
   for (let i = 1; i <= 6; i++) {
     document.getElementById('t' + i).textContent = s['t' + i];
+    document.getElementById('t' + i).className = 'media-title' + (l === 'kn' ? ' kn' : '');
   }
   
   document.getElementById('footerEl').textContent = s.footer;
 }
 
-// Bootstrap Initialization matching current subpages framework
+// Bootstrap Initialization
 const urlParams = new URLSearchParams(window.location.search);
 const langParam = urlParams.get('lang');
 applyLocalization(langParam === 'kn' ? 'kn' : 'en');
