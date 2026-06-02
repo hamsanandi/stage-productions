@@ -193,6 +193,36 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
     </div>
   </div>
 
+  <div class="media-card">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/iYc85JPoWI4?start=1169" allowfullscreen></iframe>
+    </div>
+    <div class="media-info">
+      <span class="media-label" id="lbl7">Kavya Natya</span>
+      <div class="media-title" id="t7">Seeta Kalyana — Classical Poetry Presentation</div>
+    </div>
+  </div>
+
+  <div class="media-card">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/dKZekdw_oSI" allowfullscreen></iframe>
+    </div>
+    <div class="media-info">
+      <span class="media-label" id="lbl8">Stage Production</span>
+      <div class="media-title" id="t8">Stage Play Presentation Portfolio II</div>
+    </div>
+  </div>
+
+  <div class="media-card">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/B7YAaD7HXQk" allowfullscreen></iframe>
+    </div>
+    <div class="media-info">
+      <span class="media-label" id="lbl9">Stage Production</span>
+      <div class="media-title" id="t9">Stage Play Presentation Portfolio III</div>
+    </div>
+  </div>
+
 </div>
 
 <hr class="section-divider">
@@ -208,12 +238,16 @@ const STR = {
     heading: "Recorded Performances",
     lblKavya: "Kavya Natya",
     lblThriller: "Suspense Thriller",
+    lblGeneric: "Stage Production",
     t1: "Kavya Natya Keechaka Vadhe",
     t2: "No. 3, Panchavati — Kannada Mystery Thriller Stage Play",
     t3: "Gaajina Mane — Kannada Suspense Thriller Drama",
     t4: "Puttamallige Estate — Mystery Thriller Stage Production",
     t5: "Subhadra Kalyana — Classical Kavya Natya Prasanga",
     t6: "Karna Rasayana - Based on Kumaravyasa Bharata",
+    t7: "Seeta Kalyana — Classical Poetry Presentation",
+    t8: "Stage Play Presentation Portfolio II",
+    t9: "Stage Play Presentation Portfolio III",
     footer: "Hosted on GitHub Pages"
   },
   kn: {
@@ -224,12 +258,16 @@ const STR = {
     heading: "ರಂಗ ಪ್ರದರ್ಶನಗಳು ಮತ್ತು ದೃಶ್ಯಾವಳಿಗಳು",
     lblKavya: "ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸ್ತುತಿ",
     lblThriller: "ಸಸ್ಪೆನ್ಸ್ ಥ್ರಿಲ್ಲರ್ ನಾಟಕ",
+    lblGeneric: "ರಂಗ ಪ್ರದರ್ಶನ",
     t1: "ಕಾವ್ಯನಾಟ್ಯ: ಕೀಚಕವಧೆ",
     t2: "ನಂ ೩, ಪಂಚವಟಿ — ಕನ್ನಡ ರಹಸ್ಯ ಪತ್ತೆದಾರಿ ನಾಟಕ",
     t3: "ಗಾಜಿನ ಮನೆ — ಕನ್ನಡ ರೋಚಕ ನಾಟಕ",
     t4: "ಪುಟ್ಟಮಲ್ಲಿಗೆ ಎಸ್ಟೇಟ್ — ಕುತೂಹಲಕಾರಿ ರಂಗ ಪ್ರದರ್ಶನ",
     t5: "ಸುಭದ್ರಾ ಕಲ್ಯಾಣ — ಸಾಂಪ್ರದಾಯಿಕ ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸಂಗ",
     t6: "ಕರ್ಣರಸಾಯನ — ನಾಟ್ಯಶಾಸ್ತ್ರ ಹಿನ್ನೆಲೆ ಹಾಗೂ ಕಾವ್ಯರೂಪಕ ಪ್ರಸ್ತುತಿ",
+    t7: "ಕಾವ್ಯನಾಟ್ಯ: ಸೀತಾಕಲ್ಯಾಣ",
+    t8: "ರಂಗ ಪ್ರಸ್ತುತಿ ಸರಣಿ ಸಾಕ್ಷ್ಯಚಿತ್ರ ೨",
+    t9: "ರಂಗ ಪ್ರಸ್ತುತಿ ಸರಣಿ ಸಾಕ್ಷ್ಯಚಿತ್ರ ೩",
     footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ"
   }
 };
@@ -261,8 +299,9 @@ function applyLocalization(l) {
     document.getElementById('langEn').className = 'active';
   }
 
-  const labelsKavya = [1, 5, 6];
+  const labelsKavya = [1, 5, 6, 7];
   const labelsThriller = [2, 3, 4];
+  const labelsGeneric = [8, 9];
   
   labelsKavya.forEach(i => {
     const el = document.getElementById('lbl' + i);
@@ -278,8 +317,15 @@ function applyLocalization(l) {
       el.className = 'media-label' + (l === 'kn' ? ' kn' : '');
     }
   });
+  labelsGeneric.forEach(i => {
+    const el = document.getElementById('lbl' + i);
+    if (el) {
+      el.textContent = s.lblGeneric;
+      el.className = 'media-label' + (l === 'kn' ? ' kn' : '');
+    }
+  });
 
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 9; i++) {
     const titleEl = document.getElementById('t' + i);
     if (titleEl) {
       titleEl.textContent = s['t' + i];
