@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stage Productions — Hamsanandi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Kannada:wght@400;600&family=Noto+Serif+Kannada:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gold: #8b5e1a; --gold-light: #6b4510; --gold-dim: #a0783a;
+  --bg: #ffffff; --section-bg: #fdf9f3; --header-bg: #f5ede0;
+  --border: #d4c5a9; --border-light: #c0aa88;
+  --text: #1a1208; --meta: #8a7055;
+  --c2-base: #4a1525; /* Distinct dark maroon tone aligned with Stage section theme */
+}
+
+body {
+  font-family: 'EB Garamond', serif;
+  background: var(--bg); color: var(--text);
+  max-width: 860px; margin: 0 auto;
+  padding: 0 0 60px; font-size: 16px; line-height: 1.6;
+}
+
+/* ── Navigation ── */
+.nav-back { padding: 20px 20px 0; font-size: 0.85em; letter-spacing: 0.05em; }
+.nav-back a { color: var(--gold-dim); text-decoration: none; }
+.nav-back a:hover { text-decoration: underline; color: var(--gold); }
+.nav-back.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.8em; }
+
+/* ── Stage Production Banner Area ── */
+.hero-banner {
+  padding: 30px 20px 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.page-title { 
+  font-family: 'Noto Serif Kannada', serif; 
+  font-size: 2.2rem; 
+  color: var(--c2-base); 
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.page-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--meta);
+  margin-bottom: 18px;
+  display: block;
+}
+
+/* Wide Content Header Text Container Block */
+.intro-textbox {
+  width: 100%;
+  padding: 20px;
+  background: var(--section-bg);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.intro-textbox p { margin-bottom: 12px; }
+.intro-textbox p:last-child { margin-bottom: 0; }
+.intro-textbox.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.88rem; display: none; }
+
+/* ── Section Headings ── */
+.section-heading {
+  font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--meta); text-align: center; margin: 40px 0 20px;
+}
+.section-heading.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.92rem; letter-spacing: 0.05em; text-transform: none; }
+
+/* ── Media Grid Layout ── */
+.media-grid { 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 24px; 
+  padding: 0 20px; 
+}
+.media-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+  overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.video-container { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; }
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.media-info { padding: 14px; }
+.media-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-dim); font-family: 'Cinzel', serif; margin-bottom: 4px; display: block; }
+.media-label.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.72rem; text-transform: none; letter-spacing: 0; }
+.media-title { font-family: 'Noto Serif Kannada', serif; font-size: 0.98rem; font-weight: 600; color: var(--text); min-height: 44px; line-height: 1.4; }
+
+/* ── Footer ── */
+.section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 48px 20px 0; }
+footer { text-align: center; color: var(--meta); margin-top: 24px; font-size: 0.82em; }
+footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
+
+/* ── Responsive Adjustment ── */
+@media (max-width: 640px) {
+  .media-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav-back" id="navBack">
+  <a href="../index.html">← Back to Curated Space</a>
+</div>
+
+<header class="hero-banner">
+  <h1 class="page-title" id="pageTitle">ರಂಗ ಪ್ರಸ್ತುತಿಗಳು</h1>
+  <span class="page-subtitle" id="pageSubtitle">Stage Productions & Theater Design</span>
+  
+  <div class="intro-textbox" id="textEn">
+    <p>Welcome to the digital archive of theatrical works, stage direction, and music scores designed for live cultural performances. This space brings together original screenplays, metric transformations, and modern suspense thrillers written and staged across worldwide Kannada cultural circuits.</p>
+  </div>
+  <div class="intro-textbox kn" id="textKn">
+    <p>ಕನ್ನಡ ರಂಗಭೂಮಿ, ನಾಟಕ ನಿರ್ದೇಶನ, ಚಿತ್ರಕಥೆ ಹಾಗೂ ಸಾಂಸ್ಕೃತಿಕ ನಾಟಕಗಳಿಗೆ ಸಂಯೋಜಿಸಿದ ಸಂಗೀತ ವಿನ್ಯಾಸಗಳ ಡಿಜಿಟಲ್ ಸಂಗ್ರಹವಿದು. ಮಹಾಕಾವ್ಯಗಳ ಕಾವ್ಯರೂಪಕಗಳಿಂದ ಹಿಡಿದು ಸಮಕಾಲೀನ ಸಸ್ಪೆನ್ಸ್ ಕ್ರೈಮ್ ಥ್ರಿಲ್ಲರ್ ನಾಟಕಗಳವರೆಗಿನ ವೈವಿಧ್ಯಮಯ ಪ್ರದರ್ಶನಗಳ ದೃಶ್ಯಾವಳಿಗಳನ್ನು ಇಲ್ಲಿ ಕಾಣಬಹುದು.</p>
+  </div>
+</header>
+
+<div class="section-heading" id="mediaHeading">Recorded Performances — ದೃಶ್ಯಾವಳಿಗಳು</div>
+
+<div class="media-grid">
+
+  <div class="media-card">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/CE3SfsaVMhw?start=229" allowfullscreen></iframe>
+    </div>
+    <div class="media-info">
+      <span class="media-label" id="lbl1">Kavya Natya</span>
+      <div class="media-title" id="t1">KAVYA NATYA KEECHAKA VADHE — PRASANGA PERFORMANCE</div>
+    </div>
+  </div>
+
+  <div class="media-card">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/p7OeL6WwfeM?start=765" allowfullscreen></iframe>
+    </div>
+    <div class="media-info">
+      <span class="media-label" id="lbl2">Suspense Thriller</span>
+      <div class="media-title" id="t2">NO. 3, PANCHAVATI — KANNADA MYSTERY THRILLER STAGE PLAY</div>
+    </div>
+  </div>
+
+  <div class="media-card">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/9mqZD8ljZm8?start=5" allowfullscreen></iframe>
+    </div>
+    <div class="media-info">
+      <span class="media-label" id="lbl3">Suspense Thriller</span>
+      <div class="media-title" id="t3">GAAJINA MANE — KANNADA SUSPENSE THRILLER DRAMA</div>
+    </div>
+  </div>
+
+  <div class="media-card">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/cRAmAtZi57o?start=1675" allowfullscreen></iframe>
+    </div>
+    <div class="media-info">
+      <span class="media-label" id="lbl4">Suspense Thriller</span>
+      <div class="media-title" id="t4">PUTTAMALLIGE ESTATE — MYSTERY THRILLER STAGE PRODUCTION</div>
+    </div>
+  </div>
+
+  <div class="media-card">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/Lax14uqTIz4" allowfullscreen></iframe>
+    </div>
+    <div class="media-info">
+      <span class="media-label" id="lbl5">Kavya Natya</span>
+      <div class="media-title" id="t5">SUBHADRA KALYANA — CLASSICAL KAVYA NATYA PRASANGA</div>
+    </div>
+  </div>
+
+  <div class="media-card">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/LP2VSUIv7AY?start=607" allowfullscreen></iframe>
+    </div>
+    <div class="media-info">
+      <span class="media-label" id="lbl6">Kavya Natya</span>
+      <div class="media-title" id="t6">KARNARASAYANA — INTRODUCTORY CONTEXT & DRAMATIZATION</div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="section-divider">
+<footer id="footerEl">Hosted on GitHub Pages</footer>
+
+<script>
+const STR = {
+  en: {
+    backText: "← Back to Curated Space",
+    heading: "Recorded Performances",
+    lblKavya: "Kavya Natya",
+    lblThriller: "Suspense Thriller",
+    t1: "KAVYA NATYA KEECHAKA VADHE — PRASANGA PERFORMANCE",
+    t2: "NO. 3, PANCHAVATI — KANNADA MYSTERY THRILLER STAGE PLAY",
+    t3: "GAAJINA MANE — KANNADA SUSPENSE THRILLER DRAMA",
+    t4: "PUTTAMALLIGE ESTATE — MYSTERY THRILLER STAGE PRODUCTION",
+    t5: "SUBHADRA KALYANA — CLASSICAL KAVYA NATYA PRASANGA",
+    t6: "KARNARASAYANA — INTRODUCTORY CONTEXT & DRAMATIZATION",
+    footer: "Hosted on GitHub Pages"
+  },
+  kn: {
+    backText: "← ಪ್ರಧಾನ ಪುಟಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+    heading: "ರಂಗ ಪ್ರದರ್ಶನಗಳು ಮತ್ತು ದೃಶ್ಯಾವಳಿಗಳು",
+    lblKavya: "ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸ್ತುತಿ",
+    lblThriller: "ಸಸ್ಪೆನ್ಸ್ ಥ್ರಿಲ್ಲರ್ ನಾಟಕ",
+    t1: "ಕಾವ್ಯ ನಾಟ್ಯ: ಕೀಚಕ ವಧೆ — ರಂಗ ಪ್ರಸ್ತುತಿ ಪ್ರಸಂಗ",
+    t2: "ನಂ ೩, ಪಂಚವಟಿ — ಕನ್ನಡ ರಹಸ್ಯ ಪತ್ತೇದಾರಿ ಥ್ರಿಲ್ಲರ್ ನಾಟಕ",
+    t3: "ಗಾಜಿನ ಮನೆ — ಕನ್ನಡ ಸಸ್ಪೆನ್ಸ್ ಕ್ರೈಮ್ ಥ್ರಿಲ್ಲರ್ ರಂಗ ಪ್ರಯೋಗ",
+    t4: "ಪುಟ್ಟಮಲ್ಲಿಗೆ ಎಸ್ಟೇಟ್ — ಕುತೂಹಲಕಾರಿ ರಂಗ ಪ್ರದರ್ಶನ",
+    t5: "ಸುಭದ್ರಾ ಕಲ್ಯಾಣ — ಸಾಂಪ್ರದಾಯಿಕ ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸಂಗ",
+    t6: "ಕರ್ಣರಸಾಯನ — ನಾಟ್ಯಶಾಸ್ತ್ರ ಹಿನ್ನೆಲೆ ಹಾಗೂ ಕಾವ್ಯರೂಪಕ ಪ್ರಸ್ತುತಿ",
+    footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ"
+  }
+};
+
+function applyLocalization(l) {
+  const s = STR[l];
+  
+  // Back navigation link mapping
+  document.getElementById('navBack').querySelector('a').textContent = s.backText;
+  document.getElementById('navBack').className = 'nav-back' + (l === 'kn' ? ' kn' : '');
+  
+  // Top wide description text box visibility shift
+  if (l === 'kn') {
+    document.getElementById('textEn').style.display = 'none';
+    document.getElementById('textKn').style.display = 'block';
+  } else {
+    document.getElementById('textEn').style.display = 'block';
+    document.getElementById('textKn').style.display = 'none';
+  }
+  
+  // Section layout titles mapping
+  document.getElementById('mediaHeading').textContent = s.heading;
+  document.getElementById('mediaHeading').className = 'section-heading' + (l === 'kn' ? ' kn' : '');
+  
+  // Dynamically map labels and metadata text cleanly
+  const labelsKavya = [1, 5, 6];
+  const labelsThriller = [2, 3, 4];
+  
+  labelsKavya.forEach(i => {
+    document.getElementById('lblMedia' + i).textContent = s.lblKavya;
+    document.getElementById('lblMedia' + i).className = 'media-label' + (l === 'kn' ? ' kn' : '');
+  });
+  labelsThriller.forEach(i => {
+    document.getElementById('lblMedia' + i).textContent = s.lblThriller;
+    document.getElementById('lblMedia' + i).className = 'media-label' + (l === 'kn' ? ' kn' : '');
+  });
+
+  // Inject content localized titles safely
+  for (let i = 1; i <= 6; i++) {
+    document.getElementById('t' + i).textContent = s['t' + i];
+  }
+  
+  document.getElementById('footerEl').textContent = s.footer;
+}
+
+// Bootstrap Initialization matching current subpages framework
+const urlParams = new URLSearchParams(window.location.search);
+const langParam = urlParams.get('lang');
+applyLocalization(langParam === 'kn' ? 'kn' : 'en');
+</script>
+</body>
+</html>
