@@ -237,26 +237,28 @@ const STR = {
 function applyLocalization(l) {
   const s = STR[l];
   
-  // Header text content mapping
+  // Save preference globally across portfolio navigation scope
+  localStorage.setItem('hamsanandi_lang', l);
+  
+  // Header Elements Mapping
   document.getElementById('pageTitle').textContent = s.title;
   document.getElementById('pageTitle').className = 'page-title' + (l === 'kn' ? ' kn' : '');
   document.getElementById('pageSubtitle').textContent = s.subtitle;
   
-  // Set wide text summary area content securely
+  // Textbox InnerHTML Assignment Fix
   document.getElementById('introContent').innerHTML = s.introText;
   document.getElementById('introContent').className = 'intro-textbox' + (l === 'kn' ? ' kn' : '');
 
-  // Back Link Text Routing
+  // Upper Navigation Links Mapping
   document.getElementById('navBack').querySelector('a').textContent = s.backText;
-  // Dynamic mapping back href destination parameters matching back route language state
   document.getElementById('navBack').querySelector('a').href = "../index.html?lang=" + l;
   document.getElementById('navBack').className = 'nav-back' + (l === 'kn' ? ' kn' : '');
   
-  // Section separator layouts string injection
+  // Section Separation Divider Text Mapping
   document.getElementById('mediaHeading').textContent = s.heading;
   document.getElementById('mediaHeading').className = 'section-heading' + (l === 'kn' ? ' kn' : '');
   
-  // Handle layout switcher visibility tags highlighting natively
+  // Toggle switcher layout styling
   if (l === 'kn') {
     document.getElementById('langKn').className = 'active';
     document.getElementById('langEn').className = '';
@@ -265,7 +267,7 @@ function applyLocalization(l) {
     document.getElementById('langEn').className = 'active';
   }
 
-  // Label content streams mapping loop
+  // Categories Labeling
   const labelsKavya = [1, 5, 6];
   const labelsThriller = [2, 3, 4];
   
@@ -284,7 +286,7 @@ function applyLocalization(l) {
     }
   });
 
-  // Regular prose card descriptions injection routing loop
+  // Video titles mapping loop
   for (let i = 1; i <= 6; i++) {
     const titleEl = document.getElementById('t' + i);
     if (titleEl) {
@@ -296,25 +298,25 @@ function applyLocalization(l) {
   document.getElementById('footerEl').textContent = s.footer;
 }
 
-// ── Smart Multi-Option Routing Initialization ──
+// ── Smart State Initialization ──
 const urlParams = new URLSearchParams(window.location.search);
-let langParam = urlParams.get('lang');
+let langChoice = urlParams.get('lang');
 
-// If no explicit param exists in the URL bar, sniff out the parent page language state via document.referrer
-if (!langParam && document.referrer) {
-  try {
-    const referrerUrl = new URL(document.referrer);
-    const referrerParams = new URLSearchParams(referrerUrl.search);
-    if (referrerParams.get('lang') === 'en') {
-      langParam = 'en';
-    }
-  } catch (e) {
-    // Fail-silent catch for external cross-origin security anomalies
+// If URL has no parameter, query shared localStorage or document.referrer context fallback
+if (!langChoice) {
+  langChoice = localStorage.getItem('hamsanandi_lang');
+  
+  if (!langChoice && document.referrer) {
+    try {
+      const refUrl = new URL(document.referrer);
+      const refParams = new URLSearchParams(refUrl.search);
+      if (refParams.get('lang') === 'en') langChoice = 'en';
+    } catch(e) {}
   }
 }
 
-// Fall back smoothly to English only if active parameter state is explicitly recognized as 'en'
-if (langParam === 'en') {
+// Run routing configuration directly
+if (langChoice === 'en') {
   applyLocalization('en');
 } else {
   applyLocalization('kn');
