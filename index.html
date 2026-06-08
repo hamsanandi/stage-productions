@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
@@ -45,7 +45,6 @@ body {
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
   position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
 }
-/* EN: Cinzel uppercase; KN: Noto Serif Kannada normal case */
 .page-title {
   font-family: 'Cinzel', serif; font-size: 1.5rem;
   letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase;
@@ -82,7 +81,6 @@ body {
 .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 20px; }
 .media-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
 
-/* Lazy-load thumbnail pattern (matches gamaka page) */
 .video-container { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 0; overflow: hidden; }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 .video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; cursor: pointer; display: flex; align-items: center; justify-content: center; }
@@ -93,10 +91,23 @@ body {
 .media-info { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; }
 .media-label { font-size: 0.68em; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-dim); font-family: 'Cinzel', serif; margin-bottom: 6px; display: block; }
 .media-label.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.7rem; text-transform: none; letter-spacing: 0; }
-
-/* EN: EB Garamond; KN: Noto Serif Kannada */
 .media-title { font-family: 'EB Garamond', serif; font-size: 0.95rem; font-weight: 600; color: var(--text); line-height: 1.4; }
 .media-title.kn { font-family: 'Noto Serif Kannada', serif; font-size: 0.88rem; }
+
+/* ── About section ── */
+.about-section {
+  max-width: 620px; margin: 32px auto 0; padding: 0 20px;
+  line-height: 1.8; font-size: 0.95em; color: var(--text); text-align: center;
+}
+.about-section.kn { font-family: 'Noto Sans Kannada', sans-serif; font-size: 0.9em; }
+.about-title {
+  font-family: 'Cinzel', serif; font-size: 0.75rem;
+  letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 12px;
+}
+.about-title.kn {
+  font-family: 'Noto Serif Kannada', serif; letter-spacing: 0.05em;
+  text-transform: none; font-size: 1rem;
+}
 
 /* ── Divider & footer ── */
 .section-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 48px 20px 0; }
@@ -142,6 +153,13 @@ footer.kn { font-family: 'Noto Sans Kannada', sans-serif; }
 <div class="media-grid" id="mediaGrid"></div>
 
 <hr class="section-divider">
+
+<section class="about-section" id="aboutSection">
+  <div class="about-title" id="aboutTitle">About the Director</div>
+  <p id="aboutText">Ramaprasad KV is a vaggeyakara, translator, and author working within the Karnataka Sangeeta and Kannada literary traditions.</p>
+  <p style="margin-top:10px;"><a href="https://hamsanandi.github.io/#aboutSection">Read more ›</a> &nbsp;·&nbsp; Instagram: <a href="https://www.instagram.com/hamsanandi" target="_blank">@hamsanandi</a></p>
+</section>
+
 <footer id="footerEl">Hosted on GitHub Pages</footer>
 
 <script>
@@ -160,6 +178,9 @@ const STR = {
     headingClass: "section-heading",
     lblKavya: "Kavya Natya",
     lblThriller: "Suspense Thriller",
+    aboutTitle: "About the Director", aboutTitleClass: "about-title",
+    aboutSectionClass: "about-section",
+    aboutText: "Ramaprasad KV is a vaggeyakara, translator, and author working within the Karnataka Sangeeta and Kannada literary traditions.",
     footer: "Hosted on GitHub Pages", footerClass: ""
   },
   kn: {
@@ -173,23 +194,15 @@ const STR = {
     headingClass: "section-heading kn",
     lblKavya: "ಕಾವ್ಯ ನಾಟ್ಯ ಪ್ರಸ್ತುತಿ",
     lblThriller: "ಸಸ್ಪೆನ್ಸ್ ಥ್ರಿಲ್ಲರ್ ನಾಟಕ",
+    aboutTitle: "ನಿರ್ದೇಶಕರ ಕುರಿತು", aboutTitleClass: "about-title kn",
+    aboutSectionClass: "about-section kn",
+    aboutText: "ರಾಮಪ್ರಸಾದ್ ಕೆ.ವಿ. ಅವರು ಕರ್ನಾಟಕ ಸಂಗೀತ ಮತ್ತು ಕನ್ನಡ ಸಾಹಿತ್ಯ ಪರಂಪರೆಯ ವಾಗ್ಗೇಯಕಾರರು, ಅನುವಾದಕರು ಮತ್ತು ಲೇಖಕರು.",
     footer: "GitHub Pages ನಲ್ಲಿ ಪ್ರಕಾಶಿತ", footerClass: "kn"
   }
 };
 
 /* ═══════════════════════════════════════════════════════════════
    PRODUCTIONS DATA
-   ─────────────────────────────────────────────────────────────
-   type:  "kavya" | "thriller"   — controls the label badge
-   id:    YouTube video ID
-   start: optional start time in seconds
-   en:    { title }
-   kn:    { title }
-
-   TO ADD A NEW PRODUCTION:
-   { type:"kavya", id:"YouTubeID", start:0,
-     en:{ title:"English Title" },
-     kn:{ title:"ಕನ್ನಡ ಶೀರ್ಷಿಕೆ" } },
    ═══════════════════════════════════════════════════════════════ */
 const PRODUCTIONS = [
 
@@ -276,7 +289,7 @@ function renderGrid(l) {
   const grid = document.getElementById('mediaGrid');
   grid.innerHTML = '';
   PRODUCTIONS.forEach(p => {
-    const label     = p.type === 'kavya' ? s.lblKavya : s.lblThriller;
+    const label      = p.type === 'kavya' ? s.lblKavya : s.lblThriller;
     const labelClass = 'media-label' + (l === 'kn' ? ' kn' : '');
     const titleClass = 'media-title' + (l === 'kn' ? ' kn' : '');
     const src = 'https://www.youtube.com/embed/' + p.id + (p.start ? '?start=' + p.start : '');
@@ -315,6 +328,10 @@ function applyLang(l) {
   document.getElementById('introContent').className   = s.introClass;
   document.getElementById('mediaHeading').textContent = s.heading;
   document.getElementById('mediaHeading').className   = s.headingClass;
+  document.getElementById('aboutTitle').textContent   = s.aboutTitle;
+  document.getElementById('aboutTitle').className     = s.aboutTitleClass;
+  document.getElementById('aboutSection').className   = s.aboutSectionClass;
+  document.getElementById('aboutText').textContent    = s.aboutText;
   document.getElementById('footerEl').textContent     = s.footer;
   document.getElementById('footerEl').className       = 'footer ' + (s.footerClass || '');
   document.getElementById('btnEN').classList.toggle('active', l === 'en');
